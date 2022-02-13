@@ -110,8 +110,9 @@ function draw() {
 	zOff += 0.000;
 
 	text(xOff + "," + yOff + "," + zOff, width / 2, 100);
-	text(nfc(rotationX,2) + "," + nfc(rotationY,2) + "," + nfc(rotationZ,2), width / 2, 150);
-	text(nfc(pRotationX,2) + "," + nfc(pRotationY,2) + "," + nfc(pRotationZ,2), width / 2, 200);
+	text(round(rotationX,2) + "," + round(rotationY,2) + "," + round(rotationZ,2), width / 2, 150);
+	text(round(pRotationX,2) + "," + round(pRotationY,2) + "," + round(pRotationZ,2), width / 2, 200);
+	text(round(23.34534,2) , width / 2, 250);
 
 
 
