@@ -6,6 +6,10 @@ let yOff = 1;
 let zOff = 2;
 
 
+let value = 0;
+
+
+
 function preload() {
 
 	myFont = loadFont('assets/Pokemon Solid.ttf');
@@ -18,8 +22,21 @@ function preload() {
 
 function deviceShaken() {
 	// https://p5js.org/reference/#/p5/setShakeThreshold
+	since_shaken = frameCount;
 
 }
+
+
+function deviceMoved() {
+	value = value + 5;
+	threshold = threshold + 5;
+	if (value > 255) {
+	  value = 0;
+	  threshold = 30;
+	}
+	setShakeThreshold(threshold);
+  }
+
 
 function setup() {
 	// cnv = createCanvas(windowWidth, windowHeight, WEBGL);
@@ -93,8 +110,8 @@ function draw() {
 	zOff += 0.000;
 
 	text(xOff + "," + yOff + "," + zOff, width / 2, 100);
-	text(rotationX + "," + rotationY + "," + rotationZ, width / 2, 150);
-	text(pRotationX + "," + pRotationY + "," + pRotationZ, width / 2, 200);
+	text(nfc(rotationX,2) + "," + nfc(rotationY,2) + "," + nfc(rotationZ,2), width / 2, 150);
+	text(nfc(pRotationX,2) + "," + nfc(pRotationY,2) + "," + nfc(pRotationZ,2), width / 2, 200);
 
 
 
