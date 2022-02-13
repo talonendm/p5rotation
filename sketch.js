@@ -12,6 +12,10 @@ let value = 0;
 
 
 
+
+
+
+
 function preload() {
 	myFont = loadFont('assets/Pokemon Solid.ttf');
 	since_shaken = frameCount;
@@ -111,17 +115,17 @@ function draw() {
 	text(frameCount , width / 2, height / 2);
 	text(since_shaken, width / 2, height / 2 + 50);
 
-    strokeWeigt(3);
+    strokeWeight(3);
 
-	fill(200,0,0);
+	stroke(200,0,0);
 
 	line(w2, h2, w2 + cos(rotationX) * 40.0, h2 + sin(rotationX) * 40.0);
 
-	fill(0,200,0);
+	stroke(0,200,0);
 
 	line(w2 + cos(rotationY) * 10.0, h2 + sin(rotationY) * 10.0, w2 + cos(rotationY) * 50.0, h2 + sin(rotationY) * 50.0);
 
-	fill(0,0,200);
+	stroke(0,0,200);
 
 	line(w2, h2, w2 + cos(rotationZ) * 40.0, h2 + sin(rotationZ) * 40.0);
 
