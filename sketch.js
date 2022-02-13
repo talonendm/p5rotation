@@ -6,17 +6,15 @@ let yOff = 1;
 let zOff = 2;
 
 
+var h2, w2;
+
 let value = 0;
 
 
 
 function preload() {
-
 	myFont = loadFont('assets/Pokemon Solid.ttf');
-
-
 	since_shaken = frameCount;
-
 }
 
 
@@ -26,16 +24,6 @@ function deviceShaken() {
 
 }
 
-
-function deviceMoved() {
-	value = value + 5;
-	threshold = threshold + 5;
-	if (value > 255) {
-	  value = 0;
-	  threshold = 30;
-	}
-	setShakeThreshold(threshold);
-  }
 
 
 function setup() {
@@ -49,14 +37,20 @@ function setup() {
 	textSize(35);
 	textAlign(CENTER, CENTER);
 
+
+	frameRate(20); // Attempt to refresh at starting 
+
 	nollaus();
 
 	angleMode(DEGREES);
 
-
-
 	let threshold_shake = 10; // 30 default
 	setShakeThreshold(threshold_shake);
+
+
+	h2 = height/2;
+	w2 = width/2
+
 
 }
 
@@ -114,12 +108,26 @@ function draw() {
 	text(round(pRotationX,2) + "," + round(pRotationY,2) + "," + round(pRotationZ,2), width / 2, 200);
 	text(round(23.34534,2) , width / 2, 250);
 
-
-
-
-
 	text(frameCount , width / 2, height / 2);
 	text(since_shaken, width / 2, height / 2 + 50);
+
+    strokeWeigt(3);
+
+	fill(200,0,0);
+
+	line(w2, h2, w2 + cos(rotationX) * 40.0, h2 + sin(rotationX) * 40.0);
+
+	fill(0,200,0);
+
+	line(w2 + cos(rotationY) * 10.0, h2 + sin(rotationY) * 10.0, w2 + cos(rotationY) * 50.0, h2 + sin(rotationY) * 50.0);
+
+	fill(0,0,200);
+
+	line(w2, h2, w2 + cos(rotationZ) * 40.0, h2 + sin(rotationZ) * 40.0);
+
+
+
+
 
 
 }
