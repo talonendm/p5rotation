@@ -1,4 +1,4 @@
-var since_shaken = 0
+var since_shaken = 0;
 
 
 let xOff = 0;
@@ -109,7 +109,7 @@ function draw() {
 
 	zOff += 0.000;
 
-	text(xOff + "," + yOff + "," + zOff, width / 2, 100);
+	text(round(xOff,2) + "," + round(yOff,2) + "," + round(zOff,2), width / 2, 100);
 	text(round(rotationX,2) + "," + round(rotationY,2) + "," + round(rotationZ,2), width / 2, 150);
 	text(round(pRotationX,2) + "," + round(pRotationY,2) + "," + round(pRotationZ,2), width / 2, 200);
 	text(round(23.34534,2) , width / 2, 250);
@@ -119,7 +119,7 @@ function draw() {
 
 
 	text(frameCount , width / 2, height / 2);
-	text(frameCount - since_shaken, width / 2, height / 2 + 50);
+	text(since_shaken, width / 2, height / 2 + 50);
 
 
 }
